@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
 
-<body onload="listar()">
+<body>
   <!--header inicio-->
   <div class="header">
     <div class="container">
@@ -53,10 +53,7 @@
                          Para inserir mais um campo, copie uma das inputs abaixo.
                          Assim que inserir vá para o script abaixo.
                      -->
-          <div class="campo">
-            <span>Código de ativação:</span>
-            <input id="codigo_input" type="text" placeholder="Insira aqui seu código" />
-          </div>
+      
           <div class="campo">
             <span>Nome:</span>
             <input id="nome_input" type="text" placeholder="Seu nome" />
@@ -98,7 +95,7 @@
 <script>
 
   // Array para armazenar empresas cadastradas para validação de código de ativação 
-  let listaEmpresasCadastradas = [];
+ // let listaEmpresasCadastradas = [];
 
   function cadastrar() {
     // aguardar();
@@ -109,16 +106,55 @@
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var codigoVar = codigo_input.value;
-    var idEmpresaVincular
+    // var codigoVar = codigo_input.value;
+    //var idEmpresaVincular
+    if (nomeVar == "") {
 
+        alert("Preencha o nome.");
+        return false;
+
+    } else if (emailVar == "") {
+
+        alert("Preencha o e-mail.");
+        return false;
+
+    } else if (!emailVar.includes("@") || !emailVar.includes(".")) {
+
+        alert("Digite um e-mail válido.");
+        return false;
+
+    } else if (senhaVar == "") {
+
+        alert("Preencha a senha.");
+        return false;
+
+    } else if (senhaVar.length < 8) {
+
+        alert("A senha deve possuir pelo menos 8 caracteres.");
+        return false;
+
+    } else if (confirmacaoSenhaVar == "") {
+
+        alert("Confirme a senha.");
+        return false;
+
+    } else if (senhaVar != confirmacaoSenhaVar) {
+
+        alert("As senhas não coincidem.");
+        return false;
+
+    }
+
+    
+
+    
     // Verificando se há algum campo em branco
     if (
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == "" ||
-      codigoVar == ""
+      confirmacaoSenhaVar == "" 
+     // codigoVar == ""
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -129,8 +165,9 @@
     } else {
       setInterval(sumirMensagem, 5000);
     }
-
-    // Verificando se o código de ativação é de alguma empresa cadastrada
+    
+    
+    /* Verificando se o código de ativação é de alguma empresa cadastrada
     for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
       if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
         idEmpresaVincular = listaEmpresasCadastradas[i].id
@@ -142,6 +179,7 @@
         finalizarAguardar();
       }
     }
+      */
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
@@ -155,7 +193,7 @@
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        idEmpresaVincularServer: idEmpresaVincular
+       // idEmpresaVincularServer: idEmpresaVincular
       }),
     })
       .then(function (resposta) {
@@ -185,7 +223,7 @@
     return false;
   }
 
-  // Listando empresas cadastradas 
+  /* Listando empresas cadastradas 
   function listar() {
     fetch("/empresas/listar", {
       method: "GET",
@@ -204,7 +242,7 @@
         console.log(`#ERRO: ${resposta}`);
       });
   }
-
+*/
   function sumirMensagem() {
     cardErro.style.display = "none";
   }
