@@ -1,4 +1,3 @@
-# Grupo-2---PI
-Sem tema ainda
+# MONITORAMENTO DA INFRAESTRUTURA COMPUTACIONAL RESPONSÁVEL PELO SITE DE NOTÍCIAS G1 (G1.GLOBO.COM).
 
 Link do Trello: https://trello.com/b/hDTqKQki
