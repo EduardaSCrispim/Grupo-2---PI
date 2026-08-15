@@ -1,0 +1,17 @@
+CREATE DATABASE mintBD;
+USE mintBD;
+
+CREATE TABLE usuarios(
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(40),
+email VARCHAR(40),
+senha VARCHAR(20),
+papel_usuario INT,
+FOREIGN KEY (papel_usuario) REFERENCES usuarios(id)
+);
+
+CREATE USER user_crud IDENTIFIED BY 'Sptech#2026';
+GRANT INSERT, SELECT, UPDATE, DELETE ON mintyDB.* TO user_crud;
+FLUSH PRIVILEGES;
+
+
