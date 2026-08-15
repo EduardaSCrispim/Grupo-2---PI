@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <h2>Calculadora de Perdas</h2>
+    
+    <div class="input-group">
+        <label>Horas de indisponibilidade:</label>
+        <input type="number" id="inputHoras" placeholder="Ex: 4">
+    </div>
+    <div class="input-group">
+        <label>Exames realizados por hora:</label>
+        <input type="number" id="inputExames" placeholder="Ex: 10">
+    </div>
+    <div class="input-group">
+        <label>Valor médio por exame (R$):</label>
+        <input type="number" id="inputValor" placeholder="Ex: 150">
+    </div>
+    <div class="input-group">
+        <label>Custo médio do chamado de emergência (R$):</label>
+        <input type="number" id="inputCusto" placeholder="Ex: 3000">
+    </div>
+    
+    <button onclick="calcularPerdas()">Calcular Prejuízo</button>
+    
+    <div id="resultadoPerdas"></div>
+</div>
+
+</body>
+</html>
+
+<script>
+    function calcularPerdas() {
+
+    let horasParadas = Number(inputHoras.value);
+    let examesPorHora = Number(inputExames.value);
+    let valorExame = Number(inputValor.value);
+    let custoChamadoEmergencial = Number(inputCusto.value);
+     
+    //Total de exames que n foram feitos
+    let examesPerdidos = horasParadas * examesPorHora;
+    
+    //Prejuizo
+    let prejuizoExames = examesPerdidos * valorExame;
+
+    // Soma tudo com o suporte emergencial
+    let custoTotalSemMonitoramento = prejuizoExames + custoChamadoEmergencial;
+
+    if (custoTotalSemMonitoramento > 5000) {
+        resultadoPerdas.innerHTML = "Atenção: Prejuízo crítico estimado de R$ " + custoTotalSemMonitoramento.toFixed(2) + " devido a " + examesPerdidos + " exames perdidos.";
+    
+    } else {
+        resultadoPerdas.innerHTML = "Prejuízo estimado controlado de R$ " + custoTotalSemMonitoramento.toFixed(2) + " com " + examesPerdidos + " exames perdidos.";
+    
+    }
+}
+    
+    
+</script>
