@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+    --color-red: oklch(0.6368 0.2078 25.33);
+    --color-red-dark: oklch(0.5771 0.2152 27.33);
+
+    --color-bg: oklch(0.1665 0.0124 254.17);
+    --color-bg-secondary: oklch(0.2101 0.0318 264.66);
+    --color-card: oklch(0.2781 0.0296 256.85);
+
+    --color-text-secondary: oklch(0.7137 0.0192 261.32);
+    --color-text: oklch(0.9846 0.0017 247.84);
+
+    --color-gray: #8C8C8C;
+
+    --color-success: oklch(0.7227 0.1920 149.58);
+    --color-warning: oklch(0.7686 0.1647 70.08);
+    --color-info: oklch(0.6221 0.1888 259.30);
+
+    /* Hover */
+    --color-red-hover: oklch(0.5771 0.2152 27.33);
+    --color-red-dark-hover: oklch(0.5200 0.2100 27.33);
+
+    --color-bg-hover: oklch(0.1900 0.0140 254.17);
+    --color-bg-secondary-hover: oklch(0.2400 0.0350 264.66);
+    --color-card-hover: oklch(0.3100 0.0320 256.85);
+
+    --color-text-secondary-hover: oklch(0.7800 0.0200 261.32);
+    --color-text-hover: oklch(1 0 0);
+
+    --color-gray-hover: #707070;
+
+    --color-success-hover: oklch(0.6500 0.1900 149.58);
+    --color-warning-hover: oklch(0.7000 0.1650 70.08);
+    --color-info-hover: oklch(0.5600 0.1900 259.30);
+}

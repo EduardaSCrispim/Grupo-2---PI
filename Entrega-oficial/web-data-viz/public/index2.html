@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link href="./css/output.css" rel="stylesheet">
+</head>
+<body>
+    <div id="nav" class="w-full bg-bg h-auto p-10 flex justify-center border-b-gray border-1 md:justify-between">
+        <img src="./assets/img/logo-horizontal.png" class="hidden md:block">
+        <img src="./assets/img/logo.png" class="block md:hidden">
+        <button id="" class="bg-red rounded-md text-text p-2 hidden hover:bg-red-hover duration-200 cursor-pointer md:block">Solicitar Demonstração</button>
+    </div>
+    
+    <div id="banner" class="w-full justify-center items-center p-10 flex flex-col bg-bg md:flex-row md:justify-end md:h-240 md:p-0">
+        <div class="w-full md:w-1/2 md:pl-20 md:h-full md:sticky md:pt-50 md:left-20">
+            <p class="text-red font-bold text-center pb-10 md:text-3xl md:text-left">Monitoramento Inteligente</p>
+            <h1 class="text-text text-center text-3xl pb-10 md:text-7xl md:text-left">Monitoramento Inteligente para consoles de Máquinas de <span class="text-red font-bold">Raio-x</span></h1>
+            <p class="text-gray text-center text-lg md:text-left md:text-3xl pb-10">O MINT monitora em tempo real a saúde dos hardwares dos consoles de Raio-x, prevenindo  falhas, reduzindo paradas, e aumentando a confiança dos fabrincantes de seus equipamentos </p>
+            <div id="buttons" class="w-full self-start flex justify-between">
+                <button class="bg-red rounded-lg hover:bg-red-hover duration-200 text-text text-xs w-40 h-10 cursor-pointer md:w-80 md:h-20 md:text-xl">Solicitar Demonstração</button>
+                <button class="bg-transparent border-1 border-gray rounded-lg hover:bg-gray duration-200 text-text text-xs w-30 h-10 cursor-pointer md:w-60 md:h-20 md:text-xl">Saiba mais</button>
+            </div>
+        </div>
+        <div class="hidden md:block md:w-250 md:h-full bg-linear-to-r from-bg from-20% to-transparent">
+            <img src="./assets/img/banner.png" class="h-full">
+        </div>
+    </div>
+</body>
+</html>
