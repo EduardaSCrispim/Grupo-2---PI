@@ -58,8 +58,9 @@
                 </div>
 
                 <div class="main-btns">
-                    <button class="btn-1">
+                    <button class="btn-1" onclick="cadastro()">
                         Solicitar Demonstração
+                        <a href="cadastroNovo.html"></a>
                     </button>
 
                     <button class="btn-2">
@@ -266,3 +267,13 @@
 </body>
 
 </html>
+<script>
+    function cadastro(){
+        setTimeout(function () {
+
+                          window.location = "cadastroNovo.html";
+
+                        }, 1000);
+
+                    };
+</script>

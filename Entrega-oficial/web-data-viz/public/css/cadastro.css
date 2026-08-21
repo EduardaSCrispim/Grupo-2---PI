@@ -1,0 +1,717 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #030911;
+    color: white;
+}
+
+.header {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 70px;
+
+    padding: 10px 100px 15px 0;
+
+    background: linear-gradient(90deg,
+            #0B0F14 82.65%,
+            rgba(47, 47, 47, 0) 100%);
+}
+.header2 {
+    position: relative;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.header .logo1 {
+    position: absolute;
+
+    width: 15px;
+    height: 49px;
+
+    left: 6px;
+    top: -22px;
+
+    background: #EF4444;
+
+    border-radius: 10px 0 0 0;
+}
+
+.header .logo2 {
+    position: absolute;
+
+    width: 14px;
+    height: 42px;
+
+    left: 24px;
+    top: -15px;
+
+    background: #EF4444;
+
+    border-radius: 10px 10px 0 0;
+}
+
+.header .logo3 {
+    position: absolute;
+
+    width: 15px;
+    height: 49px;
+
+    left: 41px;
+    top: -22px;
+
+    background: #EF4444;
+
+    border-radius: 0 10px 0 0;
+}
+
+.header .title {
+    position: absolute;
+
+    width: 106px;
+    height: 70px;
+
+    left: 65px;
+    top: -17;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #FFFFFF;
+
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.logo-title {
+    width: 262px;
+
+    margin-left: 250px;
+
+    display: flex;
+    align-items: center;
+
+    color: #8B8B8B;
+
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+.header .btn-header {
+    display: flex;
+
+    padding-right: 0;
+}
+
+.header .btn-header button {
+    width: 270px;
+    height: 62px;
+
+    background: #EF4444;
+
+    border: 1px solid #EF4444;
+    border-radius: 10px;
+
+    color: white;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.header .btn-header button:hover {
+    background-color: #1f0202;
+
+    border-color: red;
+}
+
+
+.banner {
+    position: relative;
+
+    width: 100%;
+    height: 800px;
+
+    overflow: hidden;
+
+    background-image: url("../assets/img/banner.png");
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+.main {
+    min-height: calc(100vh - 70px);
+    background-image: url("../assets/img/fundoCadastro.png");
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main title{
+    display: flex;
+    flex-direction: column;
+}
+.cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 650px;
+    gap: 30px;
+}
+.main-subtitle{
+    font-size: 18px;
+    font-weight: bold;
+
+}
+.title{
+    font-size: 27px;
+}
+
+.titulo span{
+    color: #EF4444;
+}
+
+.formulario {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    flex-direction: column;    
+}
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+.campo span{
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.campo input{
+    background-color: #030911;
+    color: #FFFFFF;
+    border-radius: 10px;
+    border-color: #EF4444;
+    height: 50px;
+    width: 370px;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.botao{
+    background-color: #EF4444;
+    color: #FFFFFF;
+    border-radius: 10px;
+    border-color: #EF4444;
+    height: 55px;
+    width: 370px;
+    align-items: center;
+    font-weight: bold;
+    font-size: 25px;
+    cursor: pointer;
+}
+.botao:hover{
+    border-color: red;
+    background-color: #1f0202;
+}
+
+.final{
+    font-weight: bold;
+}
+
+.perfil img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: flex;
+    margin-right: 500px;
+    margin-top: 50px;
+}
+.final a {
+    color: #f44343;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.final a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* 
+.main .main-badge p {
+    padding-top: 140px;
+
+    color: #EF4444;
+
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.main .main-title p {
+    max-width: 900px;
+
+    margin-top: 35px;
+
+    color: #FFFFFF;
+
+    font-size: 69px;
+    line-height: 67px;
+    font-weight: 700;
+}
+
+.main .main-title span {
+    color: #EF4444;
+}
+
+.main .main-subtitle p {
+    max-width: 850px;
+
+    margin-top: 35px;
+
+    color: #8B8B8B;
+
+    font-size: 30px;
+    line-height: 39px;
+    font-weight: 400;
+}
+
+.main .main-btns {
+    display: flex;
+
+    gap: 45px;
+
+    margin-top: 45px;
+}
+
+.main .main-btns button {
+    height: 83px;
+
+    border-radius: 10px;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.main .main-btns .btn-1 {
+    width: 359px;
+
+    background: #EF4444;
+
+    border: 1px solid #EF4444;
+
+    color: white;
+}
+
+.main .main-btns .btn-1:hover {
+    background-color: #1f0202;
+
+    border-color: red;
+}
+
+.main .main-btns .btn-2 {
+    width: 234px;
+
+    background-color: transparent;
+
+    border: 1px solid white;
+
+    color: white;
+}
+
+.main .main-btns .btn-2:hover {
+    background-color: white;
+
+    color: black;
+}
+
+.beneficios {
+    width: 85%;
+    max-width: 1200px;
+    margin: 70px auto 0;
+    padding: 35px 40px;
+    background-color: #10161d;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.titulo-beneficios {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.titulo-beneficios span {
+    color: #EF4444;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.titulo-beneficios h2 {
+    color: white;
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.lista-beneficios {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.beneficio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.icone-beneficio {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.icone-beneficio img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.icone-beneficio span {
+    color: #EF4444;
+    font-size: 25px;
+}
+
+.beneficio strong {
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.beneficio p {
+    color: #C4C8CC;
+    font-size: 10px;
+    line-height: 1.35;
+    font-weight: 400;
+}
+
+
+.equipamento {
+    width: 85%;
+    max-width: 1200px;
+
+    margin: 100px auto 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 50px;
+}
+
+.imagem-sistema {
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#img-sistema {
+    width: 100%;
+    max-width: 550px;
+
+    display: block;
+}
+
+.conteudo-sistema {
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 30px;
+}
+
+.parte-cima {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+#titulo-sistema {
+    color: #EF4444;
+
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.title-principal {
+    color: #FFFFFF;
+
+    font-size: 36px;
+    line-height: 1.1;
+}
+
+.descricao-sistema {
+    max-width: 550px;
+
+    color: #9BA3AA;
+
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.parte-baixo {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.parte-baixo span {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #D4D8DC;
+
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.parte-baixo img {
+    width: 18px;
+    height: 18px;
+
+    object-fit: contain;
+}
+
+
+.confiabilidade {
+    width: 85%;
+    max-width: 1200px;
+
+    margin: 100px auto 0;
+
+    padding: 40px;
+
+    background-color: #10161D;
+
+    border: 1px solid #242A32;
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+.texto-confiabilidade {
+    width: 45%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.texto-confiabilidade h2 {
+    color: white;
+
+    font-size: 24px;
+    line-height: 1.15;
+}
+
+.texto-confiabilidade p {
+    max-width: 400px;
+
+    color: #8B9299;
+
+    font-size: 13px;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.texto-confiabilidade button {
+    width: 180px;
+
+    padding: 12px;
+
+    background-color: #EF4444;
+
+    border: none;
+    border-radius: 6px;
+
+    color: white;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.texto-confiabilidade button:hover {
+    background-color: #1f0202;
+}
+
+.texto-confiabilidade button span {
+    margin-left: 5px;
+
+    color: white;
+}
+
+
+.metricas {
+    width: 55%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.metrica {
+    width: 33.33%;
+    min-height: 120px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    border-left: 1px solid #242A32;
+}
+
+.metrica:first-child {
+    border-left: none;
+}
+
+.metrica img {
+    width: 28px;
+    height: 28px;
+
+    object-fit: contain;
+}
+
+.metrica strong {
+    color: #EF4444;
+
+    font-size: 26px;
+}
+
+.metrica span {
+    color: white;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-align: center;
+
+    line-height: 1.3;
+}
+
+
+.footer {
+    width: 85%;
+    max-width: 1200px;
+
+    margin: 80px auto 0;
+
+    padding: 40px 0 50px;
+
+    border-top: 1px solid #242A32;
+    border-bottom: 1px solid #242A32;
+
+    display: flex;
+    align-items: center;
+
+    gap: 80px;
+}
+
+.logo-footer {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.logo-footer img {
+    width: 100px;
+    height: auto;
+}
+
+.logo-footer span {
+    color: #6F767D;
+
+    font-size: 11px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.contato-footer {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.contato-footer strong {
+    color: white;
+
+    font-size: 14px;
+}
+
+.contato-footer span {
+    color: #8B9299;
+
+    font-size: 13px;
+    font-weight: 400;
+}
+
+
+*/

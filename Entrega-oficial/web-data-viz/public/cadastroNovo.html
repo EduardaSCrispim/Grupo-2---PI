@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MINT</title>
+    <link rel="stylesheet" href="./css/cadastro.css">
+    <link rel="stylesheet" href="../../Entrega-oficial/web-data-viz/public/css/cadastro.css">
+    <link rel="shortcut icon" href="../public/assets/img/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header2">
+            <div class="logo1"></div>
+            <div class="logo2"></div>
+            <div class="logo3"></div>
+
+            <div class="title">MINT</div>
+        </div>
+
+        <div class="logo-title">
+            Monitoring & Infrastructure Technology
+        </div>
+
+    </header>
+    <main class="main">
+        <div class="cadastro">
+            <div class="perfil">
+                <img src="../assets/img/fotinhoDePerfil.png" alt="">
+            </div>
+            <div class="title">
+                <h1 class="titulo">Crie <span>sua</span> conta</h1>
+            </div>
+            <div class="main-subtitle">
+                <p>Preencha os dados abaixo para começar a <br>monitorar seus equipamentos</p>
+            </div>
+            <div class="formulario">
+                <div class="campo">
+                    <span>Nome Completo:</span>
+                    <input id="nome_input" type="text" placeholder="Nome Completo">
+                </div>
+                <div class="campo">
+                    <span>Email Corporativo:</span>
+                    <input id="email_input" type="text" placeholder="Email Corporativo">
+                </div>
+                <div class="campo">
+                    <span>Senha:</span>
+                    <input id="senha_input" type="password" placeholder="******">
+                </div>
+                <div class="campo">
+                    <span>Confirmar Senha:</span>
+                    <input id="ConfirmarSenha_input" type="password" placeholder="******">
+                </div>
+                <button class="botao" onclick="cadastrar()">Criar Conta</button>
+                    <div id="div_mensagem"></div>
+                <div class="final">
+                    <p>Já tem uma conta?
+                        <a href="/principal-mint/Entrega-oficial/web-data-viz/public/login.html">Entrar</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+
+        function cadastrar() {
+            let nome = nome_input.value;
+            let email = email_input.value;
+            let senha = senha_input.value;
+            let Confirmar = ConfirmarSenha_input.value
+
+            div_mensagem.innerHTML = "";
+
+            if (nome.trim() == "" || email.trim() == "" || senha.trim() == '' || Confirmar.trim() == '') {
+                div_mensagem.style.color = "white";
+                div_mensagem.innerHTML = "⚠️ Preencha todos os campos para continuar!";
+                return false;
+            }
+            if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+                div_mensagem.style.color = "white";
+                div_mensagem.innerHTML = "⚠️ Por favor, insira um e-mail válido.";
+                return false;
+            }
+            if (senha.length < 6) {
+                div_mensagem.style.color = "white";
+                div_mensagem.innerHTML = "⚠️ A senha deve ter pelo menos 6 caracteres.";
+                return false;
+            }
+            if (Confirmar != senha) {
+                div_mensagem.style.color = "white";
+                div_mensagem.innerHTML = "⚠️ As senhas não coincidem.";
+                return false;
+            }
+            else {
+                div_mensagem.style.color = "white";
+                div_mensagem.innerHTML = `✅ Cadastro realizado! ${nome}!`;
+            }
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    nomeServer: nome,
+                    emailServer: email,
+                    senhaServer: senha,
+                }),
+            })
+                .then(function (resposta) {
+                    console.log("resposta: ", resposta);
+
+                    if (resposta.ok) {
+                        // let cardErro = document.getElementById("cardErro")
+                        // cardErro.style.display = "block";
+
+                        div_mensagem.innerHTML =
+                            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                        setTimeout(() => {
+                            window.location.href = "login.html";
+                        }, "1000");
+
+                        limparFormulario();
+                        // finalizarAguardar();
+                    } else {
+                        throw "Houve um erro ao tentar realizar o cadastro!";
+                    }
+                })
+                .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+                    // finalizarAguardar();
+                });
+
+            return false;
+        }
+    </script>
